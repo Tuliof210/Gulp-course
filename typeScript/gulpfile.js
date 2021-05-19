@@ -6,8 +6,8 @@ const concat = require('gulp-concat');
 const unglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 
-function transformTS(callback) {
-  tsProject
+function transformTS() {
+  return tsProject
     .src()
     .pipe(tsProject())
     .pipe(
@@ -20,8 +20,6 @@ function transformTS(callback) {
     .pipe(unglify())
     .pipe(concat('ts_transform.min.js'))
     .pipe(gulp.dest('build'));
-
-  return callback();
 }
 
 exports.default = series(transformTS);

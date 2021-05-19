@@ -4,8 +4,8 @@ const unglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 const { series } = require('gulp');
 
-function transformJS(callback) {
-  gulp
+function transformJS() {
+  return gulp
     .src('src/**/*.js')
     .pipe(
       babel({
@@ -17,7 +17,6 @@ function transformJS(callback) {
     .pipe(unglify())
     .pipe(concat('code.min.js'))
     .pipe(gulp.dest('build'));
-  return callback();
 }
 
 exports.default = series(transformJS);

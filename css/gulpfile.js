@@ -5,8 +5,8 @@ const sass = require('gulp-sass');
 const uglifyCSS = require('gulp-uglifycss');
 const concat = require('gulp-concat');
 
-function transformCSS(cb) {
-  gulp
+function transformCSS() {
+  return gulp
     .src('src/sass/index.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(
@@ -16,16 +16,13 @@ function transformCSS(cb) {
     )
     .pipe(concat('estilo.min.css'))
     .pipe(gulp.dest('build/css'));
-
-  return cb();
 }
 
-function copyHTML(cb) {
-  gulp.src('src/index.html').pipe(gulp.dest('build'));
-  return cb();
+function copyHTML() {
+  return gulp.src('src/index.html').pipe(gulp.dest('build'));
 }
 
-exports.default = series(parallel(copyHTML, transformCSS));
+exports.default = parallel(copyHTML, transformCSS);
 
 /**
  * >>> sass
