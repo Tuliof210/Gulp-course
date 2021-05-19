@@ -11,7 +11,7 @@ function transformCSS() {
     .pipe(sass().on('error', sass.logError))
     .pipe(
       uglifyCSS({
-        unglyComments: true,
+        uglyComments: true,
       })
     )
     .pipe(concat('estilo.min.css'))
