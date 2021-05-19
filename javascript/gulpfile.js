@@ -41,7 +41,7 @@ exports.default = series(transformJS);
  *
  * >>> uglify
  * não precisa de parametros
- * serve para 'minificar' o codigo
+ * serve para 'minificar' o codigo js
  * ------------------------------------------------
  *
  * >>> concat
@@ -56,7 +56,7 @@ exports.default = series(transformJS);
  * ------------------------------------------------
  *
  * >>> on
- * captura e trata eventos
+ * captura e trata erros do pipe
  * e.g.: 'error'
  * ------------------------------------------------
  */

@@ -25,3 +25,13 @@ function transformTS(callback) {
 }
 
 exports.default = series(transformTS);
+
+/**
+ * >>> ts.createProject('tsconfig.json') src
+ * importa as configs do ts
+ * ---------------------------------------------
+ *
+ * >>> tsProject
+ * converte ts em js
+ * ---------------------------------------------
+ */
