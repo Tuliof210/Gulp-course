@@ -1,0 +1,22 @@
+const gulp = require('gulp');
+const series = gulp.series;
+const parallel = gulp.parallel;
+
+function copy(callback) {
+  console.log('copy task');
+  return callback();
+}
+function start(callback) {
+  console.log('start task');
+  return callback();
+}
+function second(callback) {
+  console.log('second task');
+  return callback();
+}
+function finish(callback) {
+  console.log('finish task');
+  return callback();
+}
+
+module.exports.default = series(start, parallel(second, copy), finish);
