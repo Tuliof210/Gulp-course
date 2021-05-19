@@ -4,6 +4,7 @@ const parallel = gulp.parallel;
 
 function copy(callback) {
   console.log('copy task');
+  gulp.src('pastaA/**/*.txt').pipe(gulp.dest('pastaB'));
   return callback();
 }
 function start(callback) {
