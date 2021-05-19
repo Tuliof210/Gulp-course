@@ -17,6 +17,7 @@ function second(callback) {
 }
 function finish(callback) {
   console.log('finish task');
+  console.log(16 ** (1 / 2));
   return callback();
 }
 
