@@ -45,6 +45,11 @@ function appIMG() {
   return gulp.src('src/assets/imgs/**/*.*').pipe(gulp.dest('build/assets/imgs'));
 }
 
+gulp.task('appHTML', appHTML);
+gulp.task('appCSS', appCSS);
+gulp.task('appJS', appJS);
+gulp.task('appIMG', appIMG);
+
 module.exports = {
   appHTML,
   appCSS,
@@ -57,4 +62,7 @@ module.exports = {
  * minifica o html
  * obj como parametro
  * ------------------------------------------------
+ *
+ * >>> gulp.task
+ * registra a task para ser usada em outra parte do codigo
  */

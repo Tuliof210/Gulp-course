@@ -14,6 +14,7 @@
     const destino = document.querySelector('[wm-link-destino]');
 
     const url = hash.substring(1);
+    console.log({ hash, url });
     fetch(url)
       .then(resp => resp.text())
       .then(html => {
