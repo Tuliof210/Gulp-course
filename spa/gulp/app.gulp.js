@@ -1,7 +1,20 @@
 const gulp = require('gulp');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const uglifycss = require('gulp-uglifycss');
+const sass = require('gulp-sass');
+const concat = require('gulp-concat');
+const htmlmin = require('gulp-htmlmin');
 
-function appHTML(cb) {
-  return cb();
+function appHTML() {
+  return gulp
+    .src('src/**/*.html')
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true,
+      })
+    )
+    .pipe(gulp.dest('build'));
 }
 function appCSS(cb) {
   return cb();
@@ -19,3 +32,10 @@ module.exports = {
   appJS,
   appIMG,
 };
+
+/**
+ * >>> htmlmin
+ * minifica o html
+ * obj como parametro
+ * ------------------------------------------------
+ */
