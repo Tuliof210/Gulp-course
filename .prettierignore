@@ -1,0 +1,4 @@
+# Ignore all min files:
+*.min.html
+*.min.css
+*.min.js
